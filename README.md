@@ -1,1 +1,2 @@
-# Isikan identitas dasar disini
+# Rayhan Athalla Ghifary
+# NIM 119140225
