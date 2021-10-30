@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum MG 3</title>
+</head>
+
+<body>
+    <div class="tema">
+        <label>Pengaturan Tema Website</label>
+        <select onchange="Tema(value)">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+        </select>
+    </div>
+    <h2 class="tema">Pengertian Faktorial</h2>
+    <div class="tema">
+        <label>Menurut Bahasa</label>
+        <select onchange="Bahasa(value)">
+            <option value="Indonesia">Indonesia</option>
+            <option value="English">English</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Japan">Japan</option>
+        </select>
+        <label class="tema" id="Bahasa">Faktorial bilangan asli n adalah perkalian semua bilangan asli yang kurang atau sama dengan. n.</label>
+    </div>
+	<div class="tema">
+        <h2>Kalkulator Faktorial</h2>
+		<label>Nilai faktorial yang ingin dicari </label>
+		<input type="number" name="" id="input">
+		<button onclick="faktorial()">Hasil</button>
+		<label id="faktorial"></label>
+    </div>
+    <script type="text/javascript">
+		function Tema(value) {
+			var tema = document.getElementsByClassName("tema")
+
+			if (value == "light") {
+				for (let i = 0; i < tema.length; i++) {
+					tema[i].style.color='black'
+				}
+				document.body.style.background = 'white'
+			} else{
+				for (let i = 0; i < tema.length; i++) {
+					tema[i].style.color='white'
+				}
+				document.body.style.background = 'black'
+			}
+		}
+
+        function Bahasa(value) {
+			var merk = document.getElementById("Bahasa")
+			if (value == "Indonesia") {
+				merk.innerHTML = "Faktorial bilangan asli n adalah perkalian semua bilangan asli yang kurang atau sama dengan. n."
+			}else if (value == "English") {
+				merk.innerHTML = "The factorial of natural numbers n is the product of all natural numbers that are less than or equal to. n."
+			}else if (value == "Chinese") {
+				merk.innerHTML = "Zì rán shǔ de jiēchéng n shì suǒyǒu xiǎoyú huò děngyú de zì rán shǔ de chéngjī. N."
+			}else {
+				merk.innerHTML = "Shizen-sū no kaijō n wa, ika no subete no shizen-sū no sekidesu. NS."
+			}
+		}
+
+        function faktorial() {
+		    var input = document.getElementById("input").value
+		    var hasil = input
+		    console.log(input)
+		    for (let i = hasil - 1; i > 0; i--) {
+		        hasil *= i
+		    }
+		    var faktorial = document.getElementById("faktorial")
+		    faktorial.innerHTML = `Nilai faktorial dari ${input} Adalah ${hasil}`
+		}
+	</script>
+</body>
+</html>
